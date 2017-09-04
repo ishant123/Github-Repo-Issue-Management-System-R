@@ -1,0 +1,50 @@
+<div>
+    <div class="input-group">
+        <input type="text" class="form-control" ng-model="model.url" placeholder="Paste URL for Git Repo and Click Go!">
+        <span class="input-group-btn">
+            <button class="btn btn-default" type="button" ng-click="model.fetchIssues()">Go!</button>
+        </span>
+    </div>
+    <div ng-show="model.totalNumberOfIssues">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Issues of {{model.repoName}}</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <h4>Total Number of Issues</h4>
+                <h2> {{model.totalNumberOfIssues}}</h2>
+            </div>
+            <div class="col-lg-4">
+                <h4>Issues Older Than 7days</h4>
+                <h2> {{model.issuesOlderThan7days}}</h2>
+            </div>
+            <div class="col-lg-4">
+                <h4>Issues In Last 24Hours</h4>
+                <h2> {{model.issuesInLast24Hours}}</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4" ng-repeat-start="users in model.displayList track by $index">
+                <div class="issuesInfo">
+                    <a ng-link="['Details', {id:users.number,repo:model.repoName}]">
+                        <h5>{{users.title}}</h5>
+                    </a>
+                    Issue Number: <b>{{users.number}}</b>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <img ng-src="{{users.avatar_url}}" class="img-responsive image-src">
+                        </div>
+                        <div class="col-lg-8">
+                            <h5>{{users.username}}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix" ng-if="($index+1)%3==0"></div>
+            <div ng-repeat-end=""></div>
+        </div>
+    </div>
+    <h3 ng-hide="model.totalNumberOfIssues" class="text-danger">{{model.error}}</h3>
+</div>

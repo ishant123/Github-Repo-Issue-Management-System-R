@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="gitIssues">
+
+<head>
+    <title>Git Issues</title>
+    <link rel="stylesheet" href="assets/css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body ng-cloak>
+
+    <issues-app></issues-app>
+
+    <!-- using agular 1.6 for creating this application -->
+    <script src="assets/js/lib/angular.min.js"></script>
+    <!-- using angular comonent router for routing components -->
+    <script src="assets/js/lib/angular_component_router.js"></script>
+    <!-- Stating point of my application -->
+    <script src="app/app.module.js"></script>
+    <script src="app/components/gitIssues/issues-app.component.js"></script>
+    <script src="app/components/gitIssues/search-issues.component.js"></script>
+    <script src="app/components/gitIssues/issues-details.component.js"></script>
+
+</body>
+
+</html>

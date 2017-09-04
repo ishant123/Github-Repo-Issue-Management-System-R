@@ -1,0 +1,15 @@
+{
+  "name": "roposo_frontend_assignment",
+  "version": "1.0.0",
+  "description": "Roposo Frontend Assignment",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Ishant Wadhwa",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.4"
+  }
+}

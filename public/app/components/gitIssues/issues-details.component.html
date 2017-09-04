@@ -1,0 +1,23 @@
+<div class="textCenter">
+    <a ng-link="['Issues']">
+        <h5> Back to Home</h5>
+    </a>
+    <h2>Issue in {{model.issueName}}</h2>
+</div>
+<div class="issuesInfo" ng-show="model.commentsBody">
+    <h3 style="color:blue">{{model.title}}</h3>
+    <hr> {{model.body}}
+    <hr>
+    <span>Comments({{model.numberComments}})</span>
+    <hr>
+     <div class="row" ng-repeat="comment in model.commentsBody track by $index">
+            <div class="col-lg-4">
+                <img ng-src="{{comment.user.avatar_url}}" class="img-responsive image-comment">
+            </div>
+            <div class="col-lg-8">
+                <h5>{{comment.user.login}}</h5>
+                <p>{{comment.body}}</p>               
+            </div>
+            <hr>
+        </div> 
+</div>
